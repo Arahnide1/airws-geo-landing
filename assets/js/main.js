@@ -1,15 +1,19 @@
-/* AiR · GEO landing */
+/* AiR · лендинги (GEO, контекстная реклама). Настройки страницы — data-атрибуты на <body>. */
 (function () {
   'use strict';
 
   /* ---------- Настройки ---------- */
   var YM_ID = 16999798;            // ID счётчика Яндекс.Метрики (тот же, что в <head>)
-  var ENDPOINT = 'send.php';       // обработчик форм → Битрикс24
+  var B = document.body.dataset;
+  var ENDPOINT = B.endpoint || 'send.php';   // обработчик форм → Битрикс24
+  var LANDING = B.landing || 'geo';          // какой лендинг (уходит в лид)
+  var GOAL_PREFIX = B.goalPrefix || '';      // префикс целей Метрики, чтобы разделять лендинги
   // Демо-режим: локально и на GitHub Pages (там нет PHP) формы не отправляются, только показывают успех
   var IS_LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || location.protocol === 'file:' || /\.github\.io$/.test(location.hostname);
 
   /* ---------- Метрика ---------- */
   function goal(name, params) {
+    name = GOAL_PREFIX + name;
     try { if (!IS_LOCAL && typeof window.ym === 'function') window.ym(YM_ID, 'reachGoal', name, params || {}); } catch (e) {}
     if (IS_LOCAL) console.log('[ym goal]', name, params || '');
   }
@@ -82,7 +86,7 @@
   }, { passive: true });
 
   /* ---------- Демо ответа нейросети ---------- */
-  var DEMO = {
+  var DEMO = window.AIR_DEMO || {
     alice: {
       q: 'Посоветуй надёжную компанию по установке окон в Новосибирске',
       intro: 'Вот компании, которые чаще всего рекомендуют по отзывам и рейтингам:',
@@ -123,7 +127,7 @@
     var intro = demo.querySelector('.ai-intro');
     var list = demo.querySelector('.ai-list');
     var sources = demo.querySelector('.ai-sources');
-    var keys = ['alice', 'gpt', 'giga'];
+    var keys = Array.prototype.map.call(tabs, function (t) { return t.getAttribute('data-ai'); });
     var timers = [];
     var current = 0;
     var userTouched = false;
@@ -157,6 +161,7 @@
         later(function () {
           var li = document.createElement('li');
           if (it[2]) li.className = 'is-you';
+          if (it[3]) { var u = document.createElement('span'); u.className = 'ai-url'; u.textContent = it[3]; li.appendChild(u); }
           var b = document.createElement('b'); b.textContent = it[0];
           li.appendChild(b); li.appendChild(document.createTextNode(it[1]));
           list.appendChild(li);
@@ -180,6 +185,37 @@
         if (en[0].isIntersecting && !started) { started = true; play(0); obs.disconnect(); }
       }).observe(demo);
     } else play(0);
+  }
+
+  /* ---------- Калькулятор бюджета (если есть на странице) ---------- */
+  var calc = document.querySelector('[data-calc]');
+  if (calc) {
+    var nf = new Intl.NumberFormat('ru-RU');
+    var inputs = calc.querySelectorAll('input[type="range"]');
+    var calcUsed = false;
+    function updateCalc() {
+      var v = {};
+      inputs.forEach(function (inp) {
+        v[inp.name] = +inp.value;
+        var out = calc.querySelector('[data-out="' + inp.name + '"]');
+        if (out) out.textContent = nf.format(+inp.value);
+        inp.style.setProperty('--p', ((inp.value - inp.min) / (inp.max - inp.min) * 100) + '%');
+      });
+      var clicks = Math.round(v.budget / v.cpc);
+      var leads = Math.max(0, Math.round(clicks * v.cr / 100));
+      calc.querySelector('[data-res="clicks"]').textContent = nf.format(clicks);
+      calc.querySelector('[data-res="leads"]').textContent = nf.format(leads);
+      calc.querySelector('[data-res="cpl"]').textContent = leads ? nf.format(Math.round(v.budget / leads)) + ' ₽' : '—';
+      var hidden = document.querySelector('[data-form="lead"] input[name="budget"]');
+      if (hidden) hidden.value = nf.format(v.budget) + ' ₽/мес';
+    }
+    inputs.forEach(function (inp) {
+      inp.addEventListener('input', function () {
+        updateCalc();
+        if (!calcUsed) { calcUsed = true; goal('calc_use'); }
+      });
+    });
+    updateCalc();
   }
 
   /* ---------- FAQ ---------- */
@@ -261,6 +297,7 @@
       btn.textContent = 'Отправляем…';
       var fd = new FormData(form);
       fd.append('form', type);
+      fd.append('landing', LANDING);
       fd.append('page', location.href);
       fd.append('referrer', document.referrer);
       UTM_KEYS.forEach(function (k) { fd.append(k, utm[k] || ''); });

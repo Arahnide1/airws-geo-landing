@@ -48,18 +48,29 @@ if (empty($_POST['consent'])) {
     respond(false, 'consent');
 }
 
+$landings   = ['geo' => 'GEO-лендинг', 'context' => 'Контекст-лендинг'];
+$landingKey = field('landing', 20);
+$landing    = $landings[$landingKey] ?? $landings['geo'];
 $form       = field('form', 20) === 'audit' ? 'audit' : 'lead';
 $name       = field('name', 100);
 $site       = field('site', 200);
 $plan       = field('plan', 100);
 $contactVia = field('contact_via', 30);
-$formTitle  = $form === 'audit' ? 'Бесплатный AI-срез' : 'Заявка на GEO-продвижение';
+$hasAds     = field('has_ads', 40);
+$budget     = field('budget', 40);
+$titles = [
+    'geo'     => ['audit' => 'Бесплатный AI-срез', 'lead' => 'Заявка на GEO-продвижение'],
+    'context' => ['audit' => 'Бесплатный аудит рекламы', 'lead' => 'Заявка на контекстную рекламу'],
+];
+$formTitle  = $titles[$landingKey][$form] ?? $titles['geo'][$form];
 
 $comments = implode("<br>", array_filter([
     'Форма: ' . $formTitle,
     $site ? 'Сайт / компания: ' . htmlspecialchars($site) : '',
     $plan ? 'Тариф: ' . htmlspecialchars($plan) : '',
     $contactVia ? 'Предпочтительная связь: ' . htmlspecialchars($contactVia) : '',
+    $hasAds ? 'Реклама сейчас: ' . htmlspecialchars($hasAds) : '',
+    $budget ? 'Бюджет из калькулятора: ' . htmlspecialchars($budget) : '',
     'Страница: ' . htmlspecialchars(field('page', 500)),
     field('referrer', 500) ? 'Реферер: ' . htmlspecialchars(field('referrer', 500)) : '',
     field('ym_client_id', 40) ? 'Метрика ClientID: ' . htmlspecialchars(field('ym_client_id', 40)) : '',
@@ -67,11 +78,11 @@ $comments = implode("<br>", array_filter([
 ]));
 
 $fields = [
-    'TITLE'          => 'GEO-лендинг: ' . $formTitle . ($site ? ' — ' . $site : ''),
+    'TITLE'          => $landing . ': ' . $formTitle . ($site ? ' — ' . $site : ''),
     'NAME'           => $name ?: 'Без имени',
     'PHONE'          => [['VALUE' => '+' . $digits, 'VALUE_TYPE' => 'WORK']],
     'SOURCE_ID'      => $config['b24_source_id'] ?? 'WEB',
-    'SOURCE_DESCRIPTION' => 'Лендинг GEO-продвижения',
+    'SOURCE_DESCRIPTION' => $landing,
     'COMMENTS'       => $comments,
     'UTM_SOURCE'     => field('utm_source'),
     'UTM_MEDIUM'     => field('utm_medium'),
@@ -105,7 +116,7 @@ if ($code === 200 && !empty($data['result'])) {
 // Резерв: если Битрикс24 недоступен — письмо в отдел продаж, чтобы заявка не потерялась
 if (!empty($config['fallback_email'])) {
     $body = strip_tags(str_replace('<br>', "\n", $comments)) . "\nИмя: $name\nТелефон: +$digits";
-    @mail($config['fallback_email'], '=?UTF-8?B?' . base64_encode('[GEO-лендинг] ' . $formTitle) . '?=', $body,
+    @mail($config['fallback_email'], '=?UTF-8?B?' . base64_encode('[' . $landing . '] ' . $formTitle) . '?=', $body,
         "Content-Type: text/plain; charset=utf-8\r\n");
     respond(true);
 }
