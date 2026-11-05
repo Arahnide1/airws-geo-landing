@@ -10,7 +10,7 @@
 
   /* ---------- Метрика ---------- */
   function goal(name, params) {
-    try { if (typeof window.ym === 'function') window.ym(YM_ID, 'reachGoal', name, params || {}); } catch (e) {}
+    try { if (!IS_LOCAL && typeof window.ym === 'function') window.ym(YM_ID, 'reachGoal', name, params || {}); } catch (e) {}
     if (IS_LOCAL) console.log('[ym goal]', name, params || '');
   }
   document.addEventListener('click', function (e) {
