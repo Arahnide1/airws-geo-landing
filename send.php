@@ -48,7 +48,7 @@ if (empty($_POST['consent'])) {
     respond(false, 'consent');
 }
 
-$landings   = ['geo' => 'GEO-лендинг', 'context' => 'Контекст-лендинг'];
+$landings   = ['geo' => 'GEO-лендинг', 'geo_b' => 'GEO-лендинг B', 'context' => 'Контекст-лендинг'];
 $landingKey = field('landing', 20);
 $landing    = $landings[$landingKey] ?? $landings['geo'];
 $form       = field('form', 20) === 'audit' ? 'audit' : 'lead';
@@ -60,6 +60,7 @@ $hasAds     = field('has_ads', 40);
 $budget     = field('budget', 40);
 $titles = [
     'geo'     => ['audit' => 'Бесплатный AI-срез', 'lead' => 'Заявка на GEO-продвижение'],
+    'geo_b'   => ['audit' => 'Бесплатный AI-срез', 'lead' => 'Заявка на GEO-продвижение'],
     'context' => ['audit' => 'Бесплатный аудит рекламы', 'lead' => 'Заявка на контекстную рекламу'],
 ];
 $formTitle  = $titles[$landingKey][$form] ?? $titles['geo'][$form];
@@ -71,6 +72,7 @@ $comments = implode("<br>", array_filter([
     $contactVia ? 'Предпочтительная связь: ' . htmlspecialchars($contactVia) : '',
     $hasAds ? 'Реклама сейчас: ' . htmlspecialchars($hasAds) : '',
     $budget ? 'Бюджет из калькулятора: ' . htmlspecialchars($budget) : '',
+    field('quiz', 400) ? 'Квиз: ' . htmlspecialchars(field('quiz', 400)) : '',
     'Страница: ' . htmlspecialchars(field('page', 500)),
     field('referrer', 500) ? 'Реферер: ' . htmlspecialchars(field('referrer', 500)) : '',
     field('ym_client_id', 40) ? 'Метрика ClientID: ' . htmlspecialchars(field('ym_client_id', 40)) : '',

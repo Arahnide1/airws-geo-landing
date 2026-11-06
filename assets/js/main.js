@@ -17,6 +17,7 @@
     try { if (!IS_LOCAL && typeof window.ym === 'function') window.ym(YM_ID, 'reachGoal', name, params || {}); } catch (e) {}
     if (IS_LOCAL) console.log('[ym goal]', name, params || '');
   }
+  window.airGoal = goal; // для скриптов конкретной страницы (квиз варианта B)
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-goal]');
     if (el) goal(el.getAttribute('data-goal'));
