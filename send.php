@@ -48,7 +48,7 @@ if (empty($_POST['consent'])) {
     respond(false, 'consent');
 }
 
-$landings   = ['geo' => 'GEO-лендинг', 'geo_b' => 'GEO-лендинг B', 'geo_c' => 'GEO-лендинг C', 'context' => 'Контекст-лендинг'];
+$landings   = ['geo' => 'GEO-лендинг', 'geo_b' => 'GEO-лендинг B', 'geo_c' => 'GEO-лендинг C', 'context' => 'Контекст-лендинг', 'context_b' => 'Контекст-лендинг B', 'context_c' => 'Контекст-лендинг C'];
 $landingKey = field('landing', 20);
 $landing    = $landings[$landingKey] ?? $landings['geo'];
 $form       = field('form', 20) === 'audit' ? 'audit' : 'lead';
@@ -63,6 +63,8 @@ $titles = [
     'geo_b'   => ['audit' => 'Бесплатный AI-срез', 'lead' => 'Заявка на GEO-продвижение'],
     'geo_c'   => ['audit' => 'Бесплатный аудит видимости', 'lead' => 'Консультация по GEO-продвижению'],
     'context' => ['audit' => 'Бесплатный аудит рекламы', 'lead' => 'Заявка на контекстную рекламу'],
+    'context_b' => ['audit' => 'Бесплатный аудит рекламы', 'lead' => 'Заявка на контекстную рекламу'],
+    'context_c' => ['audit' => 'Бесплатный аудит рекламы', 'lead' => 'Прогноз заявок по контекстной рекламе'],
 ];
 $formTitle  = $titles[$landingKey][$form] ?? $titles['geo'][$form];
 
