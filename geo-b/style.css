@@ -389,3 +389,6 @@ a:hover > .mi { opacity: .85; }
   .vs tbody th { padding-bottom: 8px; }
   .vs td::before { content: attr(data-label) ": "; font-weight: 700; }
 }
+
+/* Сводка из 4 метрик над таблицей по запросам */
+.report__sum--4 { border-bottom: 0; border-radius: var(--r-m) var(--r-m) 0 0; }

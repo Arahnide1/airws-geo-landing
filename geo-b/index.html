@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 
   <!-- Яндекс.Метрика (на GitHub Pages и localhost не подключается). Цели варианта B идут с префиксом b_ -->
   <script>
@@ -80,7 +80,7 @@
     <div class="hero__offer">
       <div class="hero__copy">
         <h1>GEO-продвижение: делаем так, чтобы нейросети рекомендовали ваш бизнес</h1>
-        <p>Клиенты всё чаще спрашивают Алису AI, ChatGPT, Google AI и Claude, к кому обратиться. Нейросеть называет 2–5 компаний. Мы работаем над тем, чтобы среди них были вы, и каждый месяц показываем динамику.</p>
+        <p>Клиенты всё чаще спрашивают Алису AI, ChatGPT, Google AI и Claude, к кому обратиться. Нейросеть называет 2–5 компаний. Мы работаем над тем, чтобы среди них были вы, и каждый месяц показываем результат по каждому запросу.</p>
       </div>
 
       <form class="quick" id="audit" data-form="audit" novalidate>
@@ -172,7 +172,7 @@
   <div class="wrap">
     <div class="head">
       <h2>Каждый месяц видно, за что вы платите</h2>
-      <p class="lede">В отчёте четыре показателя и их динамика, а также точки роста: где нейросети советуют вас, а где конкурентов. Так выглядит сводка на третьем месяце работы.</p>
+      <p class="lede">Проверяем каждый запрос ваших клиентов в каждой нейросети. В отчёте позиция бренда по каждому запросу, динамика четырёх показателей и точки роста. Так выглядит его первая страница на третьем месяце работы.</p>
     </div>
     <figure class="report">
       <div class="report__sum report__sum--4">
@@ -181,7 +181,19 @@
         <div><span>Цитирования</span><b>12</b><small>ответов со ссылкой на ваш сайт</small></div>
         <div><span>Репутация</span><b>4,9</b><small>средняя оценка в источниках, которые цитирует ИИ</small></div>
       </div>
-      <figcaption>Пример сводки. Состав отчёта согласуем перед стартом.</figcaption>
+      <div class="report__table" tabindex="0" aria-label="Позиции бренда по запросам">
+        <table>
+          <caption class="sr">Позиция бренда в ответах нейросетей по запросам</caption>
+          <thead><tr><th scope="col">Запрос клиента</th><th scope="col">Алиса AI</th><th scope="col">ChatGPT</th><th scope="col">Google AI</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">установка окон новосибирск</th><td><span class="p p--1">1</span></td><td><span class="p">2</span></td><td><span class="p">2</span></td></tr>
+            <tr><th scope="row">пластиковые окна с гарантией</th><td><span class="p p--1">1</span></td><td><span class="p">3</span></td><td><span class="p p--0">нет</span></td></tr>
+            <tr><th scope="row">окна в частный дом под ключ</th><td><span class="p">2</span></td><td><span class="p p--1">1</span></td><td><span class="p">3</span></td></tr>
+            <tr><th scope="row">кто лучше ставит окна</th><td><span class="p p--0">нет</span></td><td><span class="p">2</span></td><td><span class="p p--0">нет</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figcaption>Пример. Цифра в ячейке — место вашей компании в списке, который выдаёт нейросеть.</figcaption>
     </figure>
   </div>
 </section>
@@ -266,7 +278,7 @@
           <div><dt>Сущность бренда</dt><dd>да</dd></div>
           <div><dt>Страницы под сценарии</dt><dd>ключевые</dd></div>
           <div><dt>Внешние источники</dt><dd>карты, каталоги</dd></div>
-          <div><dt>Отчёт</dt><dd>раз в месяц</dd></div>
+          <div><dt>Отчёт по запросам</dt><dd>раз в месяц</dd></div>
         </dl>
         <a href="#final" class="btn btn--line" data-goal="tariff_base" data-plan="Базовый">Выбрать «Базовый»</a>
       </div>
@@ -314,7 +326,7 @@
         <h3>Гарантируем</h3>
         <ul class="yes">
           <li>Объём работ, прописанный в договоре</li>
-          <li>Ежемесячный отчёт с динамикой AI Visibility, упоминаний, цитирований и репутации</li>
+          <li>Ежемесячный отчёт по каждому запросу в каждой нейросети и динамика метрик</li>
           <li>Изменения на сайте силами наших разработчиков</li>
           <li>Доступ к отчётам и документам в любой момент</li>
         </ul>
