@@ -352,3 +352,12 @@ a, button, summary, label, input, select { touch-action: manipulation; -webkit-t
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Значки мессенджеров (Telegram, MAX) в цветах лендинга */
+.mi { display: inline-block; flex: none; width: 1.3em; height: 1.3em; margin-right: .4em; vertical-align: -.32em; }
+.mi__bg { fill: var(--mi-bg); }
+.mi__fg { fill: var(--mi-fg); }
+a:hover > .mi { opacity: .85; }
+:root { --mi-bg: var(--cobalt); --mi-fg: #fff; }
+.btn .mi { width: 20px; height: 20px; margin: 0; }
+.mobile-bar__ico .mi { width: 30px; height: 30px; margin: 0; }

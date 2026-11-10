@@ -259,3 +259,15 @@ h1 { font-size: clamp(32px, 4vw, 52px); font-weight: 800; letter-spacing: -.01em
   *, *::before, *::after { transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Мессенджеры в блоке заявки */
+.cta__msg { margin-top: 24px; color: rgba(255, 255, 255, .85); }
+.cta__msg a { color: #fff; font-weight: 600; }
+
+/* Значки мессенджеров (Telegram, MAX) в цветах лендинга */
+.mi { display: inline-block; flex: none; width: 1.3em; height: 1.3em; margin-right: .4em; vertical-align: -.32em; }
+.mi__bg { fill: var(--mi-bg); }
+.mi__fg { fill: var(--mi-fg); }
+a:hover > .mi { opacity: .85; }
+:root { --mi-bg: var(--blue); --mi-fg: #fff; }
+.cta { --mi-bg: #fff; --mi-fg: var(--blue); }

@@ -232,3 +232,11 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* Значки мессенджеров (Telegram, MAX) в цветах лендинга */
+.mi { display: inline-block; flex: none; width: 1.3em; height: 1.3em; margin-right: .4em; vertical-align: -.32em; }
+.mi__bg { fill: var(--mi-bg); }
+.mi__fg { fill: var(--mi-fg); }
+a:hover > .mi { opacity: .85; }
+:root { --mi-bg: var(--pine); --mi-fg: var(--amber); }
+.final, .footer { --mi-bg: var(--amber); --mi-fg: var(--pine); }

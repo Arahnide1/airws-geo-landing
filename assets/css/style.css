@@ -517,3 +517,12 @@ h3 { font-size: 20px; line-height: 1.3; font-weight: 800; }
   .reveal { opacity: 1; transform: none; }
   .case .bar__fill { transform: none; }
 }
+
+/* Значки мессенджеров (Telegram, MAX) в цветах лендинга */
+.mi { display: inline-block; flex: none; width: 1.3em; height: 1.3em; margin-right: .4em; vertical-align: -.32em; }
+.mi__bg { fill: var(--mi-bg); }
+.mi__fg { fill: var(--mi-fg); }
+a:hover > .mi { opacity: .85; }
+:root { --mi-bg: var(--blue); --mi-fg: #fff; }
+.icon-btn { border: 0; }
+.icon-btn .mi { width: 36px; height: 36px; margin: 0; }
