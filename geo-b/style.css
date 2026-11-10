@@ -392,3 +392,14 @@ a:hover > .mi { opacity: .85; }
 
 /* Сводка из 4 метрик над таблицей по запросам */
 .report__sum--4 { border-bottom: 0; border-radius: var(--r-m) var(--r-m) 0 0; }
+
+/* Отчёт: позиция сайта в ячейке, конкуренты и источники */
+.report td { white-space: nowrap; }
+.s { display: inline-block; min-width: 22px; margin-left: 6px; font-size: 13px; color: var(--slate); font-variant-numeric: tabular-nums; vertical-align: -2px; }
+.report__more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px clamp(24px, 4vw, 64px); margin-top: 28px; }
+.report__more h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.rank { list-style: none; margin: 0; padding: 0; }
+.rank li { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.rank b { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink); }
+.rank .is-you span { color: var(--ink); font-weight: 600; background: linear-gradient(transparent 55%, var(--mark) 55%); }
+@media (max-width: 720px) { .report__more { grid-template-columns: minmax(0, 1fr); } }

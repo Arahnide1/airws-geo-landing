@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 
   <!-- Яндекс.Метрика (на GitHub Pages и localhost не подключается). Цели варианта B идут с префиксом b_ -->
   <script>
@@ -167,33 +167,53 @@
   </div>
 </section>
 
-<!-- ============ ПРИМЕР ОТЧЁТА (цифры демонстрационные) ============ -->
+<!-- ============ ПРИМЕР ОТЧЁТА (структура как в отчёте сервиса мониторинга, цифры демонстрационные) ============ -->
 <section class="sec" id="report">
   <div class="wrap">
     <div class="head">
       <h2>Каждый месяц видно, за что вы платите</h2>
-      <p class="lede">Проверяем каждый запрос ваших клиентов в каждой нейросети. В отчёте позиция бренда по каждому запросу, динамика четырёх показателей и точки роста. Так выглядит его первая страница на третьем месяце работы.</p>
+      <p class="lede">Проверяем каждый запрос ваших клиентов в каждой нейросети. В отчёте видимость бренда, тональность упоминаний, доля голосов среди конкурентов, позиции бренда и сайта по каждому запросу и источники, на которые ссылается ИИ. Так выглядит сводка на третьем месяце работы.</p>
     </div>
     <figure class="report">
       <div class="report__sum report__sum--4">
-        <div><span>AI Visibility</span><b>46%</b><small>доля ответов с брендом, в первом месяце 0%</small></div>
-        <div><span>Упоминания</span><b>+31</b><small>новых упоминаний бренда за месяц</small></div>
-        <div><span>Цитирования</span><b>12</b><small>ответов со ссылкой на ваш сайт</small></div>
-        <div><span>Репутация</span><b>4,9</b><small>средняя оценка в источниках, которые цитирует ИИ</small></div>
+        <div><span>Видимость бренда</span><b>46%</b><small>ответов с упоминанием бренда, в первом месяце 0%</small></div>
+        <div><span>Доля голосов</span><b>18%</b><small>среди всех компаний в ответах, у ближайшего конкурента 11%</small></div>
+        <div><span>Тональность</span><b>86%</b><small>упоминаний положительные, негативных нет</small></div>
+        <div><span>Упоминания</span><b>37</b><small>за месяц в 9 нейросетях</small></div>
       </div>
-      <div class="report__table" tabindex="0" aria-label="Позиции бренда по запросам">
+      <div class="report__table" tabindex="0" aria-label="Позиции бренда и сайта по запросам">
         <table>
-          <caption class="sr">Позиция бренда в ответах нейросетей по запросам</caption>
-          <thead><tr><th scope="col">Запрос клиента</th><th scope="col">Алиса AI</th><th scope="col">ChatGPT</th><th scope="col">Google AI</th></tr></thead>
+          <caption class="sr">Позиция бренда в ответе и позиция сайта среди источников по запросам</caption>
+          <thead><tr><th scope="col">Запрос клиента</th><th scope="col">Поиск с Алисой</th><th scope="col">ChatGPT</th><th scope="col">Google AI</th><th scope="col">Perplexity</th></tr></thead>
           <tbody>
-            <tr><th scope="row">установка окон новосибирск</th><td><span class="p p--1">1</span></td><td><span class="p">2</span></td><td><span class="p">2</span></td></tr>
-            <tr><th scope="row">пластиковые окна с гарантией</th><td><span class="p p--1">1</span></td><td><span class="p">3</span></td><td><span class="p p--0">нет</span></td></tr>
-            <tr><th scope="row">окна в частный дом под ключ</th><td><span class="p">2</span></td><td><span class="p p--1">1</span></td><td><span class="p">3</span></td></tr>
-            <tr><th scope="row">кто лучше ставит окна</th><td><span class="p p--0">нет</span></td><td><span class="p">2</span></td><td><span class="p p--0">нет</span></td></tr>
+            <tr><th scope="row">установка окон новосибирск</th><td><span class="p p--1">1</span><span class="s">2</span></td><td><span class="p">2</span><span class="s">4</span></td><td><span class="p">2</span><span class="s">—</span></td><td><span class="p p--1">1</span><span class="s">1</span></td></tr>
+            <tr><th scope="row">пластиковые окна с гарантией</th><td><span class="p p--1">1</span><span class="s">1</span></td><td><span class="p">3</span><span class="s">—</span></td><td><span class="p p--0">нет</span><span class="s">—</span></td><td><span class="p">2</span><span class="s">3</span></td></tr>
+            <tr><th scope="row">окна в частный дом под ключ</th><td><span class="p">2</span><span class="s">3</span></td><td><span class="p p--1">1</span><span class="s">2</span></td><td><span class="p">3</span><span class="s">5</span></td><td><span class="p p--0">нет</span><span class="s">6</span></td></tr>
+            <tr><th scope="row">кто лучше ставит окна</th><td><span class="p p--0">нет</span><span class="s">5</span></td><td><span class="p">2</span><span class="s">—</span></td><td><span class="p p--0">нет</span><span class="s">—</span></td><td><span class="p">4</span><span class="s">4</span></td></tr>
           </tbody>
         </table>
       </div>
-      <figcaption>Пример. Цифра в ячейке — место вашей компании в списке, который выдаёт нейросеть.</figcaption>
+      <div class="report__more">
+        <div>
+          <h3>Конкуренты по видимости</h3>
+          <ol class="rank">
+            <li class="is-you"><span>Ваша компания</span><b>46%</b></li>
+            <li><span>Конкурент А</span><b>31%</b></li>
+            <li><span>Конкурент Б</span><b>22%</b></li>
+            <li><span>Маркетплейс</span><b>17%</b></li>
+          </ol>
+        </div>
+        <div>
+          <h3>Источники, на которые ссылается ИИ</h3>
+          <ol class="rank">
+            <li><span>yandex.ru/maps</span><b>14</b></li>
+            <li class="is-you"><span>vash-site.ru</span><b>12</b></li>
+            <li><span>2gis.ru</span><b>9</b></li>
+            <li><span>otzovik.com</span><b>5</b></li>
+          </ol>
+        </div>
+      </div>
+      <figcaption>Пример. В ячейке таблицы: крупная цифра — место бренда в ответе нейросети, мелкая — место вашего сайта среди источников ответа.</figcaption>
     </figure>
   </div>
 </section>
@@ -255,7 +275,7 @@
       <li>
         <span class="steps__when">Каждый месяц</span>
         <h3>Мониторинг и отчёт</h3>
-        <p>Отслеживаем динамику AI Visibility, упоминаний, цитирований и репутации и согласуем с вами план на следующий месяц.</p>
+        <p>Проверяем каждый запрос в каждой нейросети: позиции бренда и сайта, тональность, долю голосов среди конкурентов и источники. Показываем динамику и согласуем с вами план на следующий месяц.</p>
       </li>
     </ol>
   </div>
@@ -326,7 +346,7 @@
         <h3>Гарантируем</h3>
         <ul class="yes">
           <li>Объём работ, прописанный в договоре</li>
-          <li>Ежемесячный отчёт по каждому запросу в каждой нейросети и динамика метрик</li>
+          <li>Ежемесячный отчёт по каждому запросу в каждой нейросети, со сравнением с конкурентами</li>
           <li>Изменения на сайте силами наших разработчиков</li>
           <li>Доступ к отчётам и документам в любой момент</li>
         </ul>
@@ -354,7 +374,7 @@
       <details><summary>Чем GEO отличается от SEO?</summary><p>SEO повышает позиции и трафик сайта в поиске, GEO увеличивает присутствие бренда в ответах нейросетей. Подробное сравнение есть в таблице выше.</p></details>
       <details><summary>Когда будет результат?</summary><p>Первые упоминания обычно появляются через 1–3 месяца, устойчивый результат по всем запросам — через 4–6 месяцев.</p></details>
       <details><summary>Что входит в бесплатный AI-срез?</summary><p>Проверяем запросы ваших клиентов в Алисе AI, ChatGPT, Google AI и Claude и выявляем точки роста: где нейросети советуют вас, где конкурентов и на какие источники они ссылаются.</p></details>
-      <details><summary>С какими нейросетями работаете?</summary><p>В первую очередь с самыми популярными: Алиса AI, ChatGPT, Google AI, Claude и DeepSeek. Также Perplexity, Gemini, Qwen, Grok и GigaChat. Набор подбираем под то, где ищут ваши клиенты.</p></details>
+      <details><summary>С какими нейросетями работаете?</summary><p>В первую очередь с самыми популярными: Алиса AI, ChatGPT, Google AI, Claude и DeepSeek. Также Perplexity, Gemini, Qwen и Поиск с Алисой. Набор подбираем под то, где ищут ваши клиенты.</p></details>
       <details><summary>Сайт не на Битриксе. Это проблема?</summary><p>Нет. Работаем с WordPress, Tilda, OpenCart и самописными сайтами. Если доступа к коду нет, передадим вашему разработчику готовые правки.</p></details>
       <details><summary>Можно остановить работу?</summary><p>Да, договор помесячный. Рекомендуем минимум 3 месяца: за меньший срок нейросети не успевают обновить источники.</p></details>
     </div>

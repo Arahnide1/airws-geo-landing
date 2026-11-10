@@ -549,3 +549,6 @@ a:hover > .mi { opacity: .85; }
   .vs tbody th { padding-bottom: 8px; }
   .vs td::before { content: attr(data-label) ": "; font-weight: 700; }
 }
+
+/* Длинные слова в заголовках кейсов на планшетах */
+.case h3 { hyphens: auto; overflow-wrap: break-word; }
