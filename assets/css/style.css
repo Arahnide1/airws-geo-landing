@@ -552,3 +552,9 @@ a:hover > .mi { opacity: .85; }
 
 /* Длинные слова в заголовках кейсов на планшетах */
 .case h3 { hyphens: auto; overflow-wrap: break-word; }
+
+/* Кейсы контекста: 6 карточек, 3 в ряд */
+.kases--3 .kase { grid-column: span 2; }
+.kase__kpi dd { white-space: nowrap; }
+@media (max-width: 1160px) { .kases--3 .kase { grid-column: span 3; } }
+@media (max-width: 720px) { .kases--3 .kase { grid-column: auto; } .kase__kpi dd { white-space: normal; } }

@@ -141,7 +141,7 @@ h1 { font: 700 clamp(32px, min(4.2vw, 7.4vh), 76px)/1.06 var(--display); letter-
 
 /* Кейсы-реестр */
 .ledger { list-style: none; margin: 0; padding: 0; border-top: 1px solid #343842; }
-.ledger__row { display: grid; grid-template-columns: minmax(210px, 1.1fr) minmax(0, 3fr) minmax(0, 2fr) auto; gap: 16px 40px; align-items: center; padding: 30px 0; border-bottom: 1px solid #343842; }
+.ledger__row { display: grid; grid-template-columns: minmax(210px, 1.1fr) minmax(0, 3fr) minmax(0, 2.2fr); gap: 16px 40px; align-items: center; padding: 30px 0; border-bottom: 1px solid #343842; }
 .ledger__num { color: var(--hot); font: 700 clamp(40px, 3.4vw, 64px)/1 var(--display); letter-spacing: -.03em; white-space: nowrap; }
 .ledger__main h3 { font: 700 21px/1.3 var(--sans); }
 .ledger__main p { margin-top: 6px; font-size: 16px; max-width: 46em; }
@@ -216,9 +216,8 @@ h1 { font: 700 clamp(32px, min(4.2vw, 7.4vh), 76px)/1.06 var(--display); letter-
 @media (max-width: 1240px) {
   .nav { display: none; }
   .header__tel { margin-left: auto; }
-  .ledger__row { grid-template-columns: minmax(170px, auto) minmax(0, 1fr) auto; }
+  .ledger__row { grid-template-columns: minmax(170px, auto) minmax(0, 1fr); }
   .ledger__kpi { grid-column: 2 / 3; }
-  .ledger__link { grid-column: 3; grid-row: 1; }
   .tier { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); }
   .tier__end { grid-column: 1 / -1; justify-content: space-between; }
   .tier__price { text-align: left; }
@@ -245,7 +244,7 @@ h1 { font: 700 clamp(32px, min(4.2vw, 7.4vh), 76px)/1.06 var(--display); letter-
   .proof p, .proof p + p { padding: 16px 0; border-left: 0; }
   .proof p + p { border-top: 1px solid #343842; }
   .ledger__row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .ledger__kpi, .ledger__link { grid-column: auto; grid-row: auto; }
+  .ledger__kpi { grid-column: auto; grid-row: auto; }
   .tier { grid-template-columns: minmax(0, 1fr); padding: 28px 0; }
   .tier__end { flex-direction: column; align-items: stretch; }
   .tier__end .btn { width: 100%; }

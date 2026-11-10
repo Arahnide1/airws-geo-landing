@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Контекстная реклама в Яндекс Директ от 15 000 ₽ — AiR</title>
-  <meta name="description" content="Настраиваем Яндекс Директ вручную: поиск, РСЯ, ретаргетинг, Метрика. Бесплатный аудит вашей рекламы. Кейсы: заявки ×5, цена клика −29%.">
+  <meta name="description" content="Настраиваем Яндекс Директ вручную: поиск, РСЯ, ретаргетинг, Метрика. Бесплатный аудит вашей рекламы. Кейсы: обращений ×6, цена конверсии −72%.">
   <meta property="og:title" content="Контекстная реклама, которая приводит заявки — AiR">
   <meta property="og:description" content="Бесплатный аудит рекламы. Настройка Яндекс Директ от 15 000 ₽. Ежемесячный отчёт по каждому рублю.">
   <meta property="og:type" content="website">
@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=11">
+  <link rel="stylesheet" href="../assets/css/style.css?v=12">
 
   <!-- Яндекс.Метрика (на GitHub Pages и localhost не подключается). Цели этого лендинга идут с префиксом ctx_ -->
   <script>
@@ -31,10 +31,10 @@
 <!-- ============ HEADER ============ -->
 <header class="header" id="top">
   <div class="container header__inner">
-    <a href="https://www.airws.ru/" class="logo" target="_blank" rel="noopener" data-goal="logo_click">
+    <div class="logo">
       <img src="https://www.airws.ru/local/templates/main/assets/img/logo.svg" alt="AiR" width="42" height="42">
       <span>Digital-агентство</span>
-    </a>
+    </div>
     <nav class="nav" aria-label="Разделы">
       <a href="#cases">Кейсы</a>
       <a href="#how">Как работаем</a>
@@ -69,7 +69,7 @@
         <a href="#calc" class="btn btn--outline" data-goal="cta_hero_calc">Рассчитать бюджет</a>
       </div>
       <ul class="hero__trust">
-        <li><b>×5</b> заявок у клиентов</li>
+        <li><b>×6</b> обращений у санатория</li>
         <li><b>3–10 дней</b> до запуска</li>
         <li><b>4.7★</b> на 2ГИС</li>
       </ul>
@@ -158,66 +158,53 @@
   </div>
 </section>
 
-<!-- ============ CASES (реальные, со страницы airws.ru/services/reklama/context/) ============ -->
+<!-- ============ CASES (из документа «Кейсы: Контекстная реклама», цифры за месяц до и после) ============ -->
 <section class="section cases" id="cases">
   <div class="container">
     <h2 class="reveal">Кейсы клиентов</h2>
-    <p class="section__sub reveal">Реальные проекты AiR в Яндекс Директе. Бюджет указан без учёта нашей работы.</p>
-    <div class="kases">
-      <article class="kase kase--wide reveal">
-        <div class="case__meta"><span class="chip">Клининг · Новосибирск</span><span class="chip chip--ghost">10 месяцев</span></div>
-        <h3>Клининговая компания «Авангард»</h3>
-        <div class="kase__hero"><span class="kase__num">×5</span><span>заявок, реклама стала основным источником клиентов</span></div>
-        <dl class="kase__kpi">
-          <div><dt>Цена клика</dt><dd>11 ₽</dd></div>
-          <div><dt>CTR на поиске</dt><dd>12%</dd></div>
-          <div><dt>Бюджет</dt><dd>40 000 ₽/мес</dd></div>
-        </dl>
-        <p class="kase__did">Поиск, РСЯ и баннер на поиске. Около 700 ключевых запросов, перекрёстные минус-фразы, UTM-разметка, цели на все конверсии.</p>
-        <a class="kase__link" href="https://www.airws.ru/cases/keysy-kr/kliningovaya-kompaniya-avangard/" target="_blank" rel="noopener" data-goal="case_open">Подробнее о кейсе</a>
-      </article>
-      <article class="kase kase--wide reveal">
-        <div class="case__meta"><span class="chip">Ворота · Новосибирск</span><span class="chip chip--ghost">8 месяцев</span></div>
-        <h3>Sava — воротные и ролетные системы</h3>
-        <div class="kase__hero"><span class="kase__num">×5</span><span>лидов по секционным воротам ALLUTECH</span></div>
-        <dl class="kase__kpi">
-          <div><dt>Бюджет</dt><dd>45 000 ₽/мес</dd></div>
-          <div><dt>Инструменты</dt><dd>Поиск, РСЯ, ретаргетинг</dd></div>
-        </dl>
-        <p class="kase__did">Убрали широкие фразы, перераспределили бюджет на секционные ворота, запустили брендовые кампании и Look-a-Like по аудитории сайта.</p>
-        <a class="kase__link" href="https://www.airws.ru/cases/keysy-kr/sava/" target="_blank" rel="noopener" data-goal="case_open">Подробнее о кейсе</a>
+    <p class="section__sub reveal">Реальные проекты AiR в Яндекс Директе. Цифры за месяц: до начала нашей работы и после. Бюджет указан без оплаты наших услуг.</p>
+    <div class="kases kases--3">
+      <article class="kase reveal">
+        <div class="case__meta"><span class="chip">Санаторий</span><span class="chip chip--ghost">с октября 2025</span></div>
+        <h3>Санаторий «Озеро Карачи»</h3>
+        <div class="kase__hero"><span class="kase__num">×6</span><span>обращений в месяц: было около 78, стало около 481</span></div>
+        <dl class="kase__kpi"><div><dt>Цена обращения</dt><dd>1 330 → 282 ₽</dd></div><div><dt>ДРР</dt><dd>17,5% → 8,4%</dd></div><div><dt>ROI</dt><dd>6,1 → 13,7</dd></div><div><dt>Бюджет</dt><dd>103 → 135 тыс. ₽</dd></div></dl>
+        <p class="kase__did">Пересобрали структуру кампаний по направлениям лечения, сделали новые креативы для РСЯ, перевели на конверсионную стратегию с ДРР и цель «Ecommerce: покупка», настроили отслеживание звонков и чата. Звонков стало около 172 в месяц вместо 15, обращений в чат около 294 вместо 56.</p>
       </article>
       <article class="kase reveal">
-        <div class="case__meta"><span class="chip">Окна и потолки · Новосибирск</span><span class="chip chip--ghost">3 месяца</span></div>
-        <h3>Винтер</h3>
-        <div class="kase__hero"><span class="kase__num">−29%</span><span>цена клика за первый месяц</span></div>
-        <dl class="kase__kpi">
-          <div><dt>Фраз</dt><dd>687</dd></div>
-          <div><dt>Объявлений</dt><dd>266</dd></div>
-          <div><dt>Бюджет</dt><dd>30 000 ₽/мес</dd></div>
-        </dl>
-        <a class="kase__link" href="https://www.airws.ru/cases/keysy-kr/vinter/" target="_blank" rel="noopener" data-goal="case_open">Подробнее о кейсе</a>
+        <div class="case__meta"><span class="chip">Интернет-магазин · Казахстан</span><span class="chip chip--ghost">с октября 2025</span></div>
+        <h3>Интернет-магазин YANS</h3>
+        <div class="kase__hero"><span class="kase__num">×17</span><span>конверсий в месяц: было около 8, стало около 141</span></div>
+        <dl class="kase__kpi"><div><dt>Цена конверсии</dt><dd>13 535 → 999 ₸</dd></div><div><dt>CTR</dt><dd>0,73% → 0,83%</dd></div><div><dt>Бюджет</dt><dd>112 → 141 тыс. ₸</dd></div></dl>
+        <p class="kase__did">Запустили товарные кампании, РСЯ и ретаргетинг, отказались от стандартного поиска. Оптимизируем каждую неделю. Бюджет вырос на 26%, цена конверсии снизилась в 13,5 раза.</p>
       </article>
       <article class="kase reveal">
-        <div class="case__meta"><span class="chip">Стройматериалы · Красноярск</span><span class="chip chip--ghost">6 месяцев</span></div>
-        <h3>«Новый Дом»</h3>
-        <div class="kase__hero"><span class="kase__num">+17%</span><span>заявок при том же бюджете</span></div>
-        <dl class="kase__kpi">
-          <div><dt>Цена клика</dt><dd>6 ₽</dd></div>
-          <div><dt>CTR</dt><dd>8%</dd></div>
-          <div><dt>Бюджет</dt><dd>20 000 ₽/мес</dd></div>
-        </dl>
-        <a class="kase__link" href="https://www.airws.ru/cases/keysy-kr/novyy-dom/" target="_blank" rel="noopener" data-goal="case_open">Подробнее о кейсе</a>
+        <div class="case__meta"><span class="chip">Цветы · Новосибирск</span><span class="chip chip--ghost">с октября 2025</span></div>
+        <h3>Цветочный интернет-магазин «Сфинкс»</h3>
+        <div class="kase__hero"><span class="kase__num">−72%</span><span>цена конверсии при бюджете вдвое меньше</span></div>
+        <dl class="kase__kpi"><div><dt>Бюджет</dt><dd>69 → 34 тыс. ₽</dd></div><div><dt>Конверсий</dt><dd>37,7 → 67</dd></div><div><dt>Покупок</dt><dd>10,7 → 19,6</dd></div><div><dt>ДРР</dt><dd>198% → 50%</dd></div></dl>
+        <p class="kase__did">Разделили кампании по географии и посадочным страницам, подключили товарную галерею и электронную коммерцию в Метрике, перешли на стратегию с ДРР и отсекли ботов. ROI вырос с −0,66 до +1,28: реклама перестала работать в минус.</p>
       </article>
       <article class="kase reveal">
-        <div class="case__meta"><span class="chip">Кадастр · Новосибирск</span><span class="chip chip--ghost">10 месяцев</span></div>
-        <h3>СибГеоБюро</h3>
-        <div class="kase__hero"><span class="kase__num">×1,4</span><span>конверсий при неизменном бюджете</span></div>
-        <dl class="kase__kpi">
-          <div><dt>Запросов</dt><dd>433</dd></div>
-          <div><dt>Бюджет Директа</dt><dd>20 000 ₽/мес</dd></div>
-        </dl>
-        <a class="kase__link" href="https://www.airws.ru/cases/keysy-kr/sibgeobyuro/" target="_blank" rel="noopener" data-goal="case_open">Подробнее о кейсе</a>
+        <div class="case__meta"><span class="chip">B2B · двери оптом</span><span class="chip chip--ghost">дек 2025 — май 2026</span></div>
+        <h3>Оптовый поставщик дверей ROSA</h3>
+        <div class="kase__hero"><span class="kase__num">×10</span><span>обращений в месяц: было около 3, стало около 34</span></div>
+        <dl class="kase__kpi"><div><dt>Цена обращения</dt><dd>17 389 → 2 090 ₽</dd></div><div><dt>Обращений за период</dt><dd>119</dd></div><div><dt>Бюджет за период</dt><dd>435 тыс. ₽</dd></div></dl>
+        <p class="kase__did">Отключили регионы без заявок, перевели кампании на оптимизацию по конверсиям, скорректировали таргетинги под оптовых покупателей. Работали по Сибири и Дальнему Востоку, затем добавили Москву и область.</p>
+      </article>
+      <article class="kase reveal">
+        <div class="case__meta"><span class="chip">Медицина · Новосибирск и Омск</span><span class="chip chip--ghost">с октября 2025</span></div>
+        <h3>Сеть клиник психотерапии «Анима»</h3>
+        <div class="kase__hero"><span class="kase__num">170+</span><span>обращений в месяц без брендового трафика, бюджет тот же</span></div>
+        <dl class="kase__kpi"><div><dt>Обращений</dt><dd>150 → 170+</dd></div><div><dt>Цена обращения</dt><dd>1 050 → 900 ₽</dd></div><div><dt>Бренд в конверсиях</dt><dd>50–60% → 0%</dd></div><div><dt>Бюджет</dt><dd>150 тыс. ₽</dd></div></dl>
+        <p class="kase__did">Раньше половина заявок приходила по названию клиники, то есть от тех, кто и так её знал. Исключили брендовый трафик, пересобрали структуру и УТП по пути клиента, перешли на оплату за конверсии по двум целям. Посетителей сайта за полгода стало 600 в месяц вместо 180.</p>
+      </article>
+      <article class="kase reveal">
+        <div class="case__meta"><span class="chip">Лизинг · 9 регионов</span><span class="chip chip--ghost">окт — дек 2025</span></div>
+        <h3>Лизинговая компания «Тайм Лизинг»</h3>
+        <div class="kase__hero"><span class="kase__num">+52%</span><span>контактов в месяц при том же трафике</span></div>
+        <dl class="kase__kpi"><div><dt>Контактов</dt><dd>15,5 → 23,7</dd></div><div><dt>Конверсия в контакт</dt><dd>0,20% → 0,32%</dd></div><div><dt>Визитов</dt><dd>7 692 → 7 443</dd></div></dl>
+        <p class="kase__did">Почистили цели, отключили убыточные кампании, запустили динамический ретаргетинг, единую перфоманс-кампанию с фидом и РСЯ по своим аудиториям. Приоритет — Сибирь и Дальний Восток. Работы остановлены 30 декабря 2025: клиент не согласовал бюджет.</p>
       </article>
     </div>
   </div>
@@ -342,7 +329,7 @@
     <div class="faq__list">
       <details class="reveal"><summary>Какой нужен рекламный бюджет?</summary><p>Минимум для запуска — от 20 000 ₽ в месяц. В Новосибирске при средней конкуренции бюджеты обычно начинаются от 50 000 ₽. Точную сумму посчитаем на этапе коммерческого предложения: она зависит от ниши, географии и типов рекламы.</p></details>
       <details class="reveal"><summary>Как быстро запустится реклама?</summary><p>В среднем за 3–10 рабочих дней с начала работы. Срок зависит от объёма семантики, географии и типов кампаний.</p></details>
-      <details class="reveal"><summary>У меня уже идёт реклама. Зачем аудит?</summary><p>Аудит бесплатный и показывает, на что уходит бюджет: нерелевантные запросы, мусорные площадки РСЯ, кампании без целей. Часто после чистки заявок становится больше при том же бюджете, как в кейсе «Новый Дом»: +17%.</p></details>
+      <details class="reveal"><summary>У меня уже идёт реклама. Зачем аудит?</summary><p>Аудит бесплатный и показывает, на что уходит бюджет: нерелевантные запросы, мусорные площадки РСЯ, кампании без целей. Часто после чистки заявок становится больше при том же бюджете, как у цветочного магазина «Сфинкс»: бюджет вдвое меньше, конверсий на 78% больше.</p></details>
       <details class="reveal"><summary>Почему работа ведётся на аккаунте агентства?</summary><p>Агентствам Яндекс быстрее отвечает и быстрее проводит модерацию, бюджет поступает без задержек. Специалистам удобнее вести кампании в одном аккаунте и вовремя получать уведомления. Доступ к статистике и отчёты у вас есть всегда.</p></details>
       <details class="reveal"><summary>Что будет в отчёте?</summary><p>Расход по кампаниям, клики, цена клика, конверсии и цена заявки, что изменили за месяц и что предлагаем дальше.</p></details>
       <details class="reveal"><summary>Зачем агентство, а не свой директолог?</summary><p>Над проектом работает группа: менеджер по маркетингу, директолог и руководитель отдела маркетинга. Это обычно дешевле штатного специалиста, а за качество отвечает договор. Все отношения закреплены юридически, документы предоставляем.</p></details>
@@ -395,7 +382,7 @@
 <footer class="footer">
   <div class="container footer__inner">
     <div>
-      <a href="https://www.airws.ru/" class="logo logo--light" target="_blank" rel="noopener"><img src="https://www.airws.ru/local/templates/main/assets/img/logo.svg" alt="AiR" width="42" height="42"><span>Digital-агентство</span></a>
+      <div class="logo logo--light"><img src="https://www.airws.ru/local/templates/main/assets/img/logo.svg" alt="AiR" width="42" height="42"><span>Digital-агентство</span></div>
       <p class="footer__muted">© 2012–2026 Digital-агентство AiR</p>
     </div>
     <div class="footer__col">
@@ -430,7 +417,7 @@
         ['Клининг в Новосибирске', ' · Все виды уборки, звоните', false, 'konkurent-1.ru'],
         ['Уборка квартир недорого', ' · Скидки на первый заказ', false, 'konkurent-2.ru']
       ],
-      src: ['Цена клика 11 ₽', 'CTR 12%']
+      src: ['Поиск', 'Быстрые ссылки']
     },
     gates: {
       q: 'секционные ворота allutech купить',
@@ -440,7 +427,7 @@
         ['Секционные ворота от производителя', ' · Каталог и цены', false, 'konkurent-1.ru'],
         ['Гаражные ворота — распродажа', ' · Широкий выбор моделей', false, 'konkurent-2.ru']
       ],
-      src: ['Лиды ×5', 'Ретаргетинг']
+      src: ['Поиск', 'Ретаргетинг']
     },
     build: {
       q: 'профлист купить красноярск',
@@ -450,7 +437,7 @@
         ['Профнастил оптом и в розницу', ' · Доставка по городу', false, 'konkurent-1.ru'],
         ['Кровельные материалы', ' · Большой выбор', false, 'konkurent-2.ru']
       ],
-      src: ['Цена клика 6 ₽', 'CTR 8%']
+      src: ['Поиск', 'РСЯ']
     }
   };
 </script>
